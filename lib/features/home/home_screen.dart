@@ -8,6 +8,7 @@
 
 import 'package:flutter/material.dart';
 import '../cloze/cloze_screen.dart';
+import '../sniper/sniper_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -103,9 +104,12 @@ class HomeScreen extends StatelessWidget {
           context,
           emoji: '🎯',
           title: 'Sniper',
-          subtitle: 'Grammar combat',
+          subtitle: 'L1 Interference',
           onTap: () {
-            _showComingSoon(context, 'Sniper');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SniperScreen()),
+            );
           },
         ),
         _buildGameModeCard(
