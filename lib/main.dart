@@ -2,9 +2,11 @@
 ///
 /// Main entry point for the Flutter application.
 /// Uses Material 3 design with Yakki military-spy theme.
+/// Full port of yakkiedu Kotlin project.
 
 import 'package:flutter/material.dart';
-import 'features/home/home_screen.dart';
+import 'theme/app_theme.dart';
+import 'features/main_menu/main_menu_screen.dart';
 
 void main() {
   runApp(const YakkiApp());
@@ -19,25 +21,8 @@ class YakkiApp extends StatelessWidget {
     return MaterialApp(
       title: 'Yakki Edu',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        // Yakki military theme - dark with gold accents
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFFFD700), // Gold
-          brightness: Brightness.dark,
-        ),
-        useMaterial3: true,
-        // Custom text theme
-        textTheme: const TextTheme(
-          headlineLarge: TextStyle(
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.2,
-          ),
-          bodyLarge: TextStyle(
-            fontSize: 16,
-          ),
-        ),
-      ),
-      home: const HomeScreen(),
+      theme: AppTheme.darkTheme,
+      home: const MainMenuScreen(),
     );
   }
 }
